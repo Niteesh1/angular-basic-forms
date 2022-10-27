@@ -1,0 +1,32 @@
+<p>login works!</p>
+
+<h2 class="l">Login componenet</h2>
+
+<div class="b">      
+
+ 
+        <form #myform="ngForm">
+
+
+           <label> Username</label>
+          <input type=" text" [(ngModel)]="username" name="username" required="required" #f1='ngModel' /> <br/> 
+
+             <span class="error1" *ngIf="f1.touched&&f1.invalid && f1.errors?.['required']">username is required</span> 
+          
+          
+              <span>  pristine:{{f1.pristine}}  untouched:{{f1.untouched}} dirty {{f1.dirty}} </span> <br>
+            
+             <label> Password</label>
+
+           <input type="password"  [(ngModel)] = "password" name ="password" required="required" #f2='ngModel'>   <br>
+
+
+           <span  class="error2" *ngIf="f2.touched && f2.invalid && f2.errors?.['required']"> password is required  </span>    <br>       
+            
+
+           <input type="submit" value="Login" (click)="validationForm(myform)" >
+        </form>
+     
+</div>
+
+<p>{{errmsg}}</p>

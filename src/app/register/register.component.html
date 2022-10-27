@@ -1,0 +1,25 @@
+<p>register works!</p>
+
+
+<div>
+
+     <form [formGroup]="reg">
+
+        <label for="USERNAME"> USERNAME</label>
+      <input type="text" formControlName="username">  <br> <br>
+      <div *ngIf="reg.controls?.['username']?.touched&& reg.controls?.['username']?.invalid && reg.controls?.['username']?.errors?.['required']"> Enter username</div> 
+
+      <br> <br> 
+            
+
+       <label for="PASSWORD"> PASSWORD</label>
+         <input type="text" formControlName="password">  <br>
+
+       <div *ngIf="reg.controls?.['password']?.touched && reg.controls?.['password']?.invalid && reg.controls?.['password']?.errors?.['required']"> Enter password</div> 
+
+       
+
+        <input type="submit" (click)="regis()">
+
+     </form>
+</div>
